@@ -5,6 +5,9 @@ require('dotenv').config();
 
 var app = express();
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 // var logger = function (req, res, next) {
 //     console.log('Logging...');
 //     next();
@@ -44,7 +47,9 @@ app.get('/', function (req, res) {
             })
             .catch(console.error);
     } else {
-        res.send(`<a href="${traktAuthUrl}">authenticate</a>`);
+        res.render('index', {
+            login: traktAuthUrl
+        });
     }
 })
 

@@ -10,7 +10,7 @@
 
     * Redirect uri
         ```
-        http://localhost:3000
+        http://localhost:3000/auth
         ```
 
     * Javascript (cors) origins
